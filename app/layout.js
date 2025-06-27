@@ -11,6 +11,11 @@ const plexMono = IBM_Plex_Mono({
   variable: '--font-plex-mono',
 });
 
+export const metadata = {
+  title: 'Mind Signal',
+  description: 'High-impact note-taking for high-speed minds',
+};
+
 export default function RootLayout({ children, session }) {
   return (
     <html lang="en" className="dark">
