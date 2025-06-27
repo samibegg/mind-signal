@@ -11,7 +11,7 @@ const plexMono = IBM_Plex_Mono({
   variable: '--font-plex-mono',
 });
 
-export const metadata = {
+const metadata = {
   title: 'Mind Signal',
   description: 'High-impact note-taking for high-speed minds',
 };
