@@ -1,8 +1,6 @@
-// 4. app/layout.js
-'use client';
-
+// 2. Replace the content of your app/layout.js with this:
 import { IBM_Plex_Mono } from "next/font/google";
-import { SessionProvider } from "next-auth/react";
+import Providers from "@/components/Providers";
 import "./globals.css";
 
 const plexMono = IBM_Plex_Mono({
@@ -11,18 +9,20 @@ const plexMono = IBM_Plex_Mono({
   variable: '--font-plex-mono',
 });
 
-const metadata = {
+// The metadata object is now correctly exported from a Server Component.
+export const metadata = {
   title: 'Mind Signal',
   description: 'High-impact note-taking for high-speed minds',
 };
 
-export default function RootLayout({ children, session }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <body className={plexMono.variable}>
-        <SessionProvider session={session}>
-            {children}
-        </SessionProvider>
+        {/* The Providers component now handles the client-side SessionProvider */}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
